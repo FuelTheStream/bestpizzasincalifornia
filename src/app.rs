@@ -66,7 +66,7 @@ pub fn App() -> Element {
             content: "ca-pub-5369604889706863"
         }
 
-        // Structured Data (JSON-LD)
+        // Structured Data (JSON-LD) - WebSite Schema
         document::Script {
             r#type: "application/ld+json",
             dangerous_inner_html: r#"{{
@@ -80,6 +80,87 @@ pub fn App() -> Element {
                     "target": "https://bestpizzasincalifornia.com/?s={{search_term_string}}",
                     "query-input": "required name=search_term_string"
                 }}
+            }}"#
+        }
+
+        // Structured Data - Restaurant Collection
+        document::Script {
+            r#type: "application/ld+json",
+            dangerous_inner_html: r#"{{
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Top Pizza Restaurants in California",
+                "description": "Curated list of the best pizza restaurants across California",
+                "itemListElement": [
+                    {{
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {{
+                            "@type": "Restaurant",
+                            "name": "Pitfire Pizza",
+                            "servesCuisine": "Pizza",
+                            "priceRange": "$$",
+                            "address": {{
+                                "@type": "PostalAddress",
+                                "addressRegion": "CA",
+                                "addressCountry": "US"
+                            }},
+                            "description": "Artisan pizza with 9 locations across California featuring wood-fired pizzas with premium ingredients"
+                        }}
+                    }},
+                    {{
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {{
+                            "@type": "Restaurant",
+                            "name": "Ciao Pasta",
+                            "servesCuisine": "Italian, Pizza",
+                            "priceRange": "$$",
+                            "address": {{
+                                "@type": "PostalAddress",
+                                "addressLocality": "San Juan Capistrano",
+                                "addressRegion": "CA",
+                                "postalCode": "92675",
+                                "addressCountry": "US"
+                            }},
+                            "description": "Authentic thin crust Italian pizza in San Juan Capistrano"
+                        }}
+                    }},
+                    {{
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {{
+                            "@type": "Restaurant",
+                            "name": "Mr Moto",
+                            "servesCuisine": "Pizza",
+                            "priceRange": "$$$",
+                            "address": {{
+                                "@type": "PostalAddress",
+                                "addressLocality": "San Diego",
+                                "addressRegion": "CA",
+                                "addressCountry": "US"
+                            }},
+                            "description": "Innovative white and red pies in San Diego with unique flavor combinations"
+                        }}
+                    }},
+                    {{
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {{
+                            "@type": "Restaurant",
+                            "name": "California Pizza Kitchen",
+                            "alternateName": "CPK",
+                            "servesCuisine": "Pizza, American",
+                            "priceRange": "$$",
+                            "address": {{
+                                "@type": "PostalAddress",
+                                "addressRegion": "CA",
+                                "addressCountry": "US"
+                            }},
+                            "description": "Famous for Original BBQ Chicken Pizza with 53 locations across California"
+                        }}
+                    }}
+                ]
             }}"#
         }
 
