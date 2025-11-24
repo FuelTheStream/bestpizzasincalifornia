@@ -25,6 +25,12 @@ pub fn App() -> Element {
         }
         document::Title { "BestPizzasInCalifornia.com" }
 
+        // Google AdSense Meta Tag for Verification
+        document::Meta {
+            name: "google-adsense-account",
+            content: "ca-pub-5369604889706863"
+        }
+
         // Google AdSense Script
         document::Script {
             src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5369604889706863",
