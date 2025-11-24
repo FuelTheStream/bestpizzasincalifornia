@@ -3,7 +3,7 @@
 [web.app]
 
 # HTML title tag content
-title = "app"
+title = "BestPizzasInCalifornia.com"
 
 # include `assets` in web platform
 [web.resource]
