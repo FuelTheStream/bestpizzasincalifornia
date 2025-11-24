@@ -3,10 +3,7 @@ use dioxus::prelude::*;
 #[component]
 pub fn WebsiteHeader() -> Element {
     rsx! {
-        div { class: "layout-website-header",
-            h1 { class: "layout-website-title", "BESTPIZZASINCALIFORNIA.COM" }
-            div { class: "layout-website-tagline", "DISCOVER CALIFORNIA'S FINEST PIZZA" }
-        }
+        // Header removed
     }
 }
 
