@@ -259,16 +259,17 @@ body::-webkit-scrollbar {
     background: #ffff00;
 }
 
-/* AdSense Placeholders */
+/* AdSense Placeholders - Match carousel card styling */
 .adsense-container {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    min-height: 100px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    height: 250px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 24px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 32px 0;
-    padding: 20px;
     position: relative;
 }
 
@@ -295,6 +296,31 @@ body::-webkit-scrollbar {
 /* Responsive Banner Ad */
 .adsense-banner {
     min-height: 90px;
+    width: 100%;
+}
+
+/* Ensure adsbygoogle ins element renders - match carousel card dimensions */
+.adsbygoogle {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+}
+
+/* Mobile Ad Container - Match mobile carousel card styling */
+@media (max-width: 768px) {
+    .adsense-container {
+        height: 300px;
+        width: 100%;
+        max-width: 100%;
+        margin: 24px auto;
+        border: none;
+    }
+
+    .adsbygoogle {
+        height: 300px;
+        min-height: 300px;
+    }
 }
 
 /* In-feed Ad */

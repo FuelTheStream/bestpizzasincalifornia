@@ -1,0 +1,683 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hide scrollbar for all browsers */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+    font-family: 'Tektur', monospace;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.location-bar {
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #ff0000;
+}
+
+.location-icon {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    margin-right: 8px;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+}
+
+.location-text {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Website Header */
+.website-header {
+    background: #000;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.website-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 3px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.website-tagline {
+    font-size: 12px;
+    color: #ffff00;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .website-title {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .website-tagline {
+        font-size: 10px;
+    }
+
+    .website-header {
+        padding: 24px 16px;
+    }
+}
+
+.restaurants-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.restaurant-section {
+    padding: 40px 20px 60px;
+    border-bottom: 1px solid #333;
+}
+
+.restaurant-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.restaurant-info {
+    text-align: center;
+}
+
+.restaurant-info h2 {
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.restaurant-type {
+    color: #ffff00;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.restaurant-address {
+    color: #999;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.status-badge {
+    background: #ff0000;
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 24px auto;
+    background: #111;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+    min-width: calc(25% - 15px);
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0a;
+    position: relative;
+    border: 1px solid #222;
+    transition: transform 0.2s;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.02);
+    border-color: #ff0000;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.pizza-placeholder {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #111,
+        #111 10px,
+        #222 10px,
+        #222 20px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 32px);
+    left: 16px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-family: 'Tektur', monospace;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.carousel-btn:hover {
+    background: #ff0000;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    background: #666;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.indicator.active {
+    background: #ffff00;
+}
+
+/* AdSense Placeholders - Match carousel card styling */
+.adsense-container {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    height: 250px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.adsense-label {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ffff00;
+    color: #000;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.adsense-placeholder {
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Banner Ad */
+.adsense-banner {
+    min-height: 90px;
+    width: 100%;
+}
+
+/* Ensure adsbygoogle ins element renders - match carousel card dimensions */
+.adsbygoogle {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+}
+
+/* Mobile Ad Container - Match mobile carousel card styling */
+@media (max-width: 768px) {
+    .adsense-container {
+        height: 300px;
+        width: 100%;
+        max-width: 100%;
+        margin: 24px auto;
+        border: none;
+    }
+
+    .adsbygoogle {
+        height: 300px;
+        min-height: 300px;
+    }
+}
+
+/* In-feed Ad */
+.adsense-infeed {
+    min-height: 250px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px auto;
+    max-width: 900px;
+}
+
+.menu-item {
+    background: #1a1a1a;
+    padding: 16px;
+    border-left: 3px solid #ff0000;
+    text-align: center;
+}
+
+.menu-item-name {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.menu-item-price {
+    color: #ffff00;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.loading-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .location-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .carousel-container {
+        padding: 10px 0;
+    }
+
+    .carousel-track {
+        gap: 0;
+        padding: 0;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        height: 300px;
+        border: none;
+    }
+
+    .carousel-slide:hover {
+        transform: none;
+        border-color: transparent;
+    }
+
+    .pizza-placeholder {
+        font-size: 14px;
+    }
+
+    .carousel-controls {
+        width: calc(100% - 20px);
+        left: 10px;
+    }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+    .restaurant-info h2 {
+        font-size: 24px;
+    }
+}
+
+/* Fixed Footer Overlay */
+.footer-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    border-top: 2px solid #ff0000;
+    z-index: 1000;
+}
+
+.footer-content {
+    padding: 16px 24px 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.footer-trademark {
+    text-align: center;
+    padding-top: 12px;
+    border-top: 1px solid #333;
+}
+
+.footer-text {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #ffff00;
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 12px 16px 8px;
+    }
+
+    .footer-main {
+        margin-bottom: 12px;
+    }
+
+    .footer-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-link {
+        font-size: 11px;
+    }
+
+    .footer-trademark {
+        padding-top: 8px;
+    }
+
+    body {
+        padding-bottom: 100px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #000;
+    border: 2px solid #ff0000;
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
+    text-align: center;
+    animation: slideUp 0.3s;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    font-family: 'Tektur', monospace;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #ff0000;
+}
+
+.modal-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 16px 0;
+    letter-spacing: 2px;
+}
+
+.modal-divider {
+    width: 100px;
+    height: 2px;
+    background: #ffff00;
+    margin: 0 auto 24px;
+}
+
+.modal-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffff00;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.modal-section {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff0000;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.modal-description {
+    font-size: 13px;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.modal-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.modal-features li {
+    padding: 8px 0;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffff00;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.modal-contact {
+    font-size: 12px;
+    color: #fff;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.modal-cta {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 16px 48px;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Tektur', monospace;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: background 0.2s;
+    margin-top: 24px;
+}
+
+.modal-cta:hover {
+    background: #ffff00;
+    color: #000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 24px;
+        width: 95%;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .modal-text {
+        font-size: 14px;
+    }
+
+    .modal-close {
+        font-size: 24px;
+    }
+}
