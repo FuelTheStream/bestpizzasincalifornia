@@ -23,12 +23,64 @@ pub fn App() -> Element {
             rel: "stylesheet",
             href: "https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;700;900&display=swap"
         }
-        document::Title { "BestPizzasInCalifornia.com" }
+
+        // SEO Meta Tags
+        document::Title { "Best Pizzas in California | Top Pizza Restaurants & Artisan Pizzerias" }
+        document::Meta {
+            name: "description",
+            content: "Discover California's finest pizza restaurants including Pitfire Pizza, CPK, and award-winning artisan pizzerias. Find the best pizza near you with authentic recipes and premium ingredients."
+        }
+        document::Meta {
+            name: "keywords",
+            content: "best pizza california, california pizza, pitfire pizza, cpk, artisan pizza, pizza restaurants california, pizza near me, best pizzerias"
+        }
+        document::Meta { name: "author", content: "BestPizzasInCalifornia.com" }
+        document::Meta { name: "viewport", content: "width=device-width, initial-scale=1.0" }
+        document::Meta { charset: "UTF-8" }
+
+        // Canonical URL
+        document::Link { rel: "canonical", href: "https://bestpizzasincalifornia.com" }
+
+        // Open Graph / Facebook
+        document::Meta { property: "og:type", content: "website" }
+        document::Meta { property: "og:url", content: "https://bestpizzasincalifornia.com" }
+        document::Meta { property: "og:title", content: "Best Pizzas in California | Top Pizza Restaurants" }
+        document::Meta {
+            property: "og:description",
+            content: "Discover California's finest pizza restaurants including Pitfire Pizza, CPK, and award-winning artisan pizzerias."
+        }
+        document::Meta { property: "og:site_name", content: "BestPizzasInCalifornia.com" }
+
+        // Twitter Card
+        document::Meta { name: "twitter:card", content: "summary_large_image" }
+        document::Meta { name: "twitter:url", content: "https://bestpizzasincalifornia.com" }
+        document::Meta { name: "twitter:title", content: "Best Pizzas in California | Top Pizza Restaurants" }
+        document::Meta {
+            name: "twitter:description",
+            content: "Discover California's finest pizza restaurants including Pitfire Pizza, CPK, and award-winning artisan pizzerias."
+        }
 
         // Google AdSense Meta Tag for Verification
         document::Meta {
             name: "google-adsense-account",
             content: "ca-pub-5369604889706863"
+        }
+
+        // Structured Data (JSON-LD)
+        document::Script {
+            r#type: "application/ld+json",
+            dangerous_inner_html: r#"{{
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Best Pizzas in California",
+                "url": "https://bestpizzasincalifornia.com",
+                "description": "California's premier guide to the best pizza restaurants and artisan pizzerias",
+                "potentialAction": {{
+                    "@type": "SearchAction",
+                    "target": "https://bestpizzasincalifornia.com/?s={{search_term_string}}",
+                    "query-input": "required name=search_term_string"
+                }}
+            }}"#
         }
 
         // Google AdSense Script
