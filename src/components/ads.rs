@@ -16,15 +16,18 @@ pub fn AdSense(banner_type: String, ad_slot: String) -> Element {
 
     rsx! {
         div { class: "{class_name}",
-            div { class: "ads-label", "AD" }
+            div { class: "ads-label", "ADVERTISEMENT" }
             ins {
                 class: "adsbygoogle",
-                style: "display:block; width:100%; height:100%;",
+                style: "display:block",
                 "data-ad-client": "ca-pub-5369604889706863",
                 "data-ad-slot": "{ad_slot}",
                 "data-ad-format": "{data_ad_format}",
                 "data-full-width-responsive": "true",
                 "data-ad-layout-key": if banner_type == "infeed" { data_ad_layout_key } else { "" }
+            }
+            script {
+                dangerous_inner_html: "(adsbygoogle = window.adsbygoogle || []).push({{}});"
             }
         }
     }
