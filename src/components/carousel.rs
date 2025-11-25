@@ -66,11 +66,10 @@ pub fn Carousel(slides: Vec<String>) -> Element {
 fn calculate_max_carousel_index(slide_count: usize) -> usize {
     // On desktop, 4 slides are visible (25% each)
     // On mobile, 1 slide is visible (100%)
-    // We'll use a conservative approach: stop scrolling when we have 4 slides showing
-    let visible_slides = 4;
-
-    if slide_count > visible_slides {
-        slide_count - visible_slides
+    // Use mobile-first approach: assume 1 slide visible
+    // This works for both mobile (1 slide) and desktop (allows scrolling through all)
+    if slide_count > 1 {
+        slide_count - 1
     } else {
         0
     }

@@ -190,6 +190,7 @@ pub fn App() -> Element {
                     "/assets/pitfire/vegan-margherita.png".to_string(),
                     "/assets/pitfire/zoes-pepperoni.png".to_string(),
                     "/assets/pitfire/field-mushroom.png".to_string(),
+                    "/assets/pitfire/mushroom-extra.png".to_string(),
                     "/assets/pitfire/say-cheese.png".to_string(),
                     "/assets/pitfire/honey-bear.png".to_string(),
                     "/assets/pitfire/pineapple-express.png".to_string(),
